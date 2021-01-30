@@ -19,11 +19,11 @@ public class Program {
 		while (true) {
 			try {
 				UI.clearScreen();
-				UI.printBoard(chessMatch.getPieces());
+				UI.printMatch(chessMatch);
 				System.out.println();
 				System.out.print("Source: ");
 				ChessPosition source = UI.readChessPosition(sc);
-				
+
 				boolean[][] possibleMoves = chessMatch.possibleMoves(source);
 				UI.clearScreen();
 				UI.printBoard(chessMatch.getPieces(), possibleMoves);
@@ -38,7 +38,7 @@ public class Program {
 				System.out.println(e.getMessage());
 				System.out.println("Press enter and try again");
 				sc.nextLine();
-			}catch (InputMismatchException e) {
+			} catch (InputMismatchException e) {
 				System.out.println();
 				System.out.println(e.getMessage());
 				System.out.println("Press enter and try again");
